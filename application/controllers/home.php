@@ -1,4 +1,4 @@
-<?php  
+<?php     
 
 defined ('BASEPATH')OR exit('No direct script access allowed');
 
@@ -67,6 +67,12 @@ class Home extends CI_Controller
 
 	public function reader_profile(){
 		 $this->load->view('home/readerprofile_view');
+
+	}
+
+	public function user_account(){
+		 $this->load->view('home/useraccount_view');
+
 
 	}
 
