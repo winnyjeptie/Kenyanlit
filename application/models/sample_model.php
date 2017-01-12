@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sample extends CI_Model{
+class sample_model extends CI_Model{
 
 	public function signup(){
 
@@ -49,6 +49,13 @@ class Sample extends CI_Model{
 			return 2;
 		}
 
+	}
+
+	public function author(){
+
+	}
+	public function reader(){
+		
 	}
 
 }

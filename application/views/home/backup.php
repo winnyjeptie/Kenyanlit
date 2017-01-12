@@ -62,7 +62,7 @@
                     </li>
                     
                     <li>
-                          <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/Register</button>
+                          <button class="btn btn-primary btn-lg" href="<?site_url('home/sign_up')?>" data-toggle="modal" data-target=".bs-modal-sm">Sign In/Register</button>
 
                     </li>
                     </div>

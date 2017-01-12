@@ -61,7 +61,8 @@
                     </li>
                     
                     <li>
-                          <a href="<?php echo base_url(); ?>home/sign_up">Sign Up</a>
+                          <a href="<?=site_url('home/sign_up')?>"> Sign Up </a>
+
 
                     </li>
                     </div>

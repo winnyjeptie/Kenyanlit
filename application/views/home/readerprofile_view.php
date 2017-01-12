@@ -45,7 +45,7 @@
 <div class="container">
 <div class="row">
 <div class="col-md-10 ">
-<form class="form-horizontal">
+<form class="form-horizontal" method ="POST" action="<?=site_url('home/upload_items')?>" accept-charset="utf-8" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -61,85 +61,85 @@
   <div class="col-md-4">
   <div class="checkbox">
     <label for="Languages Known-0">
-      <input type="checkbox" name="Languages Known" id="Languages Known-0" value="1">
+      <input type="checkbox" name="Drama" id="Languages Known-0" value="Drama">
       Drama
     </label>
     </div>
   <div class="checkbox">
     <label for="Languages Known-1">
-      <input type="checkbox" name="Languages Known" id="Languages Known-1" value="2">
-      Action and Adventure
+      <input type="checkbox" name="Action/Adventure" id="Languages Known-1" value="Action/Adventure">
+      Action/Adventure
     </label>
     </div>
   <div class="checkbox">
     <label for="Languages Known-2">
-      <input type="checkbox" name="Languages Known" id="Languages Known-2" value="3">
+      <input type="checkbox" name="Romance" id="Languages Known-2" value=" Romance">
       Romance
     </label>
     </div>
   <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name=" Mystery" id="Languages Known-3" value="Mystery">
       Mystery
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Horror" id="Languages Known-3" value="Horror">
       Horror
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Self help/Motivational" id="Languages Known-3" value="Self help/Motivational">
       Self help/Motivational
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Children" id="Languages Known-3" value="Children">
       Children
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Historical" id="Languages Known-3" value="Historical ">
       Historical 
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Poetry" id="Languages Known-3" value="Poetry">
       Poetry
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Religion/Spirituality" id="Languages Known-3" value="Religion/Spirituality">
       Religion/Spirituality
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Fables/Folklore" id="Languages Known-3" value="Fables/Folklore">
       Fables/Folklore
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Autobiographies" id="Languages Known-3" value="Autobiographies">
       Autobiographies
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Biographies" id="Languages Known-3" value="Biographies">
       Biographies
     </label>
     </div>
     <div class="checkbox">
     <label for="Languages Known-3">
-      <input type="checkbox" name="Languages Known" id="Languages Known-3" value="4">
+      <input type="checkbox" name="Short story" id="Languages Known-3" value="ShortStory">
       Short story
     </label>
     </div>
@@ -151,11 +151,12 @@
   
     </label>
 
-     <input type="input" name="LanguagesKnown" id="Languages Known-4"  placeholder="Other Genres">
+     <input type="input" name="Other Genres" id="Languages Known-4"  placeholder="Other Genres">
     </div>
     
   </div>
 </div>
+
 
 
 
@@ -209,8 +210,9 @@
 <div class="form-group">
   <label class="col-md-4 control-label" ></label>  
   <div class="col-md-4">
-  <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</a>
+  <!--<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</a>
  <!-- <a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-remove-sign"></span> Clear</a> -->
+ <input id="submit" name="submit" type="submit" value="save" class="btn btn-primary">
     
   </div>
 </div>

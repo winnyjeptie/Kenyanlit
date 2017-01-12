@@ -17,7 +17,7 @@
      <nav class="navbar navbar-default">
      <div class="container-fluid">
        <div class="navbar-header">
-       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Wattpad_logo.svg/1024px-Wattpad_logo.svg.png" width="120" style="padding-top:8px; padding-right:8px"><a href="#" class="navbar-brand" style="color:white"></a>
+      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Wattpad_logo.svg/1024px-Wattpad_logo.svg.png" width="120" style="padding-top:8px; padding-right:8px"><a href="#" class="navbar-brand" style="color:white"></a> !-->
        </div>
   <ul class="nav navbar-nav">
     <li><a href="#" style="color:white">Discover</a></li>
