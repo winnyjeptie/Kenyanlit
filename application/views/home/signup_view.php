@@ -22,7 +22,7 @@
 	</head>
 
 
-	<body style="background-image: url('<?php echo base_url(); ?>grayscale/img/book2.jpg')"; id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<body style="background-image: url('<?php echo base_url(); ?>grayscale/img/book2.jpg')"; id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload='document.form1.text1.focus()'>
 
   <!-- Navigation -->
     <nav>
@@ -34,13 +34,13 @@
   <div  class="container">
   <div   class="login">
   	<h2 class="login-heading">Sign Up...It's free!</h2>
-      <form action = "<?php echo base_url(); ?>home/register" method="post">
+      <form action = "<?php echo base_url(); ?>home/register" method="post" form name="form1" >
         <input type="text" name="firstname" placeholder="First Name" required="required" class="input-txt" />
           <input type="text" name="lastname" placeholder="Last Name" required="required" class="input-txt" />
-          <input type="text" name="email" placeholder="Email" required="required" class="input-txt" />
+          <input type="email" name="email" placeholder="Email" required="required" class="input-txt" />
           <input type="text" name="username" placeholder="Username" required="required" class="input-txt" />
           <input type="password" name="password" placeholder="Password" required="required" class="input-txt" />
-          <input type="password" name="confirmpassword" placeholder="Confirm Password" required="required" class="input-txt"/><br>
+         <!-- <input type="password" name="confirmpassword" placeholder="Confirm Password" required="required" class="input-txt"/><br> -->
         
 <br />
 <br />
@@ -80,7 +80,7 @@
 
           <div class="login-footer">
    
-            <button style="font-weight " type="submit">Submit</button>
+            <button style="font-weight " type="submit"  onclick="CheckPassword(document.form1.text1)" > Submit</button>
     
           </div>
       </form>
@@ -88,6 +88,23 @@
 </div>
   
    
-	
+	<script type="text/javascript">
+   
+   function CheckPassword(inputtxt) 
+{ 
+var passw=  /^[A-Za-z]\w{7,14}$/;
+if(inputtxt.value.match(passw)) 
+{ 
+alert('Correct, try another...')
+return true;
+}
+else
+{ 
+alert('Wrong...!')
+return false;
+}
+} 
+  </script>
 </body>
 </html>
+

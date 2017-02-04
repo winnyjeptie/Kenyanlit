@@ -51,6 +51,42 @@ class sample_model extends CI_Model{
 
 	}
 
+	public function get_id($email){
+
+		$query = $this->db->select("person_id")
+							->from("person")
+							->where("email", $email)->get();
+
+		foreach ($query->result_array() as $row){
+			$ret = $row["person_id"];
+		}
+
+		#foreach ($query->result() as $key => $id) {
+			#$ret[$key] = $id->person_id;
+		#}
+
+		return $ret;
+
+	}
+
+	public function get_rid($email){
+
+		$query = $this->db->select("person_id")
+							->from("person")
+							->where("email", $email)->get();
+
+		foreach ($query->result_array() as $row){
+			$ret = $row["person_id"];
+		}
+
+		#foreach ($query->result() as $key => $id) {
+			#$ret[$key] = $id->person_id;
+		#}
+
+		return $ret;
+
+	}
+
 	public function author(){
 
 	}

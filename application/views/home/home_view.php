@@ -131,7 +131,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; KenyanLit 2016</p>
+            <p>Copyright &copy; KenyanLit 2017</p>
         </div>
     </footer>
 
