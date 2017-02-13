@@ -2,7 +2,7 @@
 <html lang="en">
 <body>
     <head>
-        <title>KenyanLit: Upload</title>
+        <title>KenyanLit: Successful</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,34 +29,12 @@
     <a style="color: white; text-transform: uppercase;  font-weight: 300; font-size: 18px; float: right; font-style: italic; " href="<?php echo base_url(); ?>">KENYANLIT: HOME</a>
              
     </nav>
+    <br>
  
-  <!--form -->
-  <div  class="container">
-  <div   class="login">
-    <h2 class="login-heading">Upload New excerpt</h2>
-      <form action = "<?php echo base_url(); ?>home/upload_excerpt" method="post">
-        <input type="text" name="booktitle" placeholder="Book Title" required="required" class="input-txt" />
-          <input type="text" name="author" placeholder="Author Name" required="required" class="input-txt" />
-           <input type="text" name="genre" placeholder="Genre" required="required" class="input-txt" />
-          <br>
-        <!-- File Button --> 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="upload_excerpt">Upload your pdf excerpt: </label> 
-            <div class="col-md-4">
-           <input id="Upload_excerpt" name="file_name" class="input-file" type="file" required="required">
-           </div>
-
-           <br>
-
-   
-            <button style="font-weight " type="submit"> Submit</button>
-    
-          </div>
-      </form>
-  </div>
-</div>
-  
-
+  <p> Information saved successfully!!<br> click the link below to proceed to your account!</p>
+<ul>
+ <li><a href="<?=site_url('home/reader_user_view')?>">My Account</a></li>  
+</ul>
 </body>
 </html>
 

@@ -239,15 +239,18 @@ class Home extends CI_Controller
  //$this->user_model->update_pdf($id,$data);
 	                
 //$post_id = print_r($id);
-foreach ($id as $key){
+/*foreach ($id as $key){
 	$this->db->where('person_id', $key);
 	$this->db->update('author_registration', $data); 
 	$this->user_model->update_pdf($key,$data);
-}
+}*/
+
+$query = "UPDATE author_registration SET pdf_url = '".$path."' WHERE person_id = '".$id."'";
+$run = $this->db->query($query);
 
 
- //redirect('home/show_author_pic');
-echo "uploaded successfully";
+ redirect('home/success');
+//echo "uploaded successfully";
                   }
                   else
                  {
@@ -344,7 +347,7 @@ echo "uploaded successfully";
                     ]);
 	                
 
- redirect('home/index/');
+ redirect('home/success');
                   }
                   else
                  {
@@ -420,10 +423,10 @@ echo "uploaded successfully";
 
 	}
 
-	public function baxster(){
+	public function success(){
 
 
-		 $this->load->view('baxster_admin_panel/index');
+		 $this->load->view('home/successful_view');
 
 	}
 
