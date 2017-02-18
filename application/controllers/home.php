@@ -86,17 +86,6 @@ class Home extends CI_Controller
 	}
 
 
-	public function show_readers(){
-      $data['information'] =$this->user_model->show_profiler();
-
-      //var_dump($data);die();
-		$this->load->view('include/header_view');
-		$this->load->view('include/authors_view',$data);
-		$this->load->view('include/footer_view');
-
-
-	}
-
 	public function upload_items(){
 
     
@@ -180,8 +169,13 @@ class Home extends CI_Controller
 
                     ]);
 	                
+	                $userdata = array(
+	                	"id" => $encrypted_id
+	                );
 
- redirect('home/show_author_pic/'.$encrypted_id);
+	                $this->session->set_userdata($userdata);
+
+ 					redirect('home/show_author_pic/'.$encrypted_id);
                   }
                   else
                  {
@@ -249,7 +243,7 @@ $query = "UPDATE author_registration SET pdf_url = '".$path."' WHERE person_id =
 $run = $this->db->query($query);
 
 
- redirect('home/success');
+redirect('home/success');
 //echo "uploaded successfully";
                   }
                   else
@@ -345,9 +339,17 @@ $run = $this->db->query($query);
            'picture_url'=>$path
 
                     ]);
+
+                  $userdata = array(
+	                	"id" => $encrypted_id
+	                );
+
+                   $this->session->set_userdata($userdata);
+
 	                
 
  redirect('home/success');
+
                   }
                   else
                  {
@@ -361,6 +363,8 @@ $run = $this->db->query($query);
       
 
 	}
+
+	
 	
 	
 	
@@ -373,7 +377,31 @@ $run = $this->db->query($query);
 		if ($result != 2){
 
 			#redirect("/");
-			echo "Valid credentials.";
+			#echo "Valid credentials.";
+
+			foreach ($result as $key){
+
+				$userdata = array(
+					"id" => $this->encrypt->encode($key->person_id),
+					"fname" => $key->fname,
+					"lname" => $key->lname,
+					"username" => $key->username,
+					"email" => $key->email
+				);
+
+				$this->session->set_userdata($userdata);
+
+				if ($key->type == 1){
+
+					redirect("home/reader_user_view");
+
+				}
+				elseif ($key->type == 2){
+					redirect("home/author_user_view");
+
+				}
+
+			}
 
 		}
 		else if ($result == 2){
@@ -410,27 +438,70 @@ $run = $this->db->query($query);
 	}
 
 	public function reader_user_profile(){
-		 $data['information'] =$this->user_model->show_profiler();
+		 
+		if (isset($_SESSION["id"])){
 
-		 $this->load->view('profile/readerinfo_view');
+			$this->load->view('profile/readeruser_view');
+
+		}
+		else{
+
+			redirect("/");
+
+		}
 
 	}
 
+	
 	public function reader_user_view(){
-		 $data['information'] =$this->user_model->show_profiler();
+		
 
 		 $this->load->view('profile/readeruser_view');
 
 	}
+
+	public function author_user_profile(){
+		 
+		if (isset($_SESSION["id"])){
+
+			$this->load->view('profile/authoruser_view');
+
+		}
+		else{
+
+			redirect("/");
+
+		}
+
+	}
+
+
+	public function author_user_view(){
+		
+		 $this->load->view('profile/authoruser_view');
+
+	}
+
+
 
 	public function success(){
 
 
 		 $this->load->view('home/successful_view');
 
+
+
+
+
 	}
 
+	public function logout(){
 
+		session_destroy();
+
+		redirect("/");
+
+	}
 
 
 

@@ -34,7 +34,7 @@
   <div  class="container">
   <div   class="login">
     <h2 class="login-heading">Upload New excerpt</h2>
-      <form action = "<?php echo base_url(); ?>home/upload_excerpt" method="post">
+      <form action = action="<?=site_url('home/upload_excerpt')?>"  method="POST" enctype="multipart/form-data">
         <input type="text" name="booktitle" placeholder="Book Title" required="required" class="input-txt" />
           <input type="text" name="author" placeholder="Author Name" required="required" class="input-txt" />
            <input type="text" name="genre" placeholder="Genre" required="required" class="input-txt" />

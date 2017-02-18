@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,7 +151,7 @@
 
             <!-- Textarea -->
             <div class="form-group">
-              <label for="overview">Brief personal description (max 200 words)</label>
+              <label for="overview">Brief personal description (max 200 words) Please include your social media tags.</label>
               <textarea class="form-control" rows = "10"  id="description" name="description" placeholder="Description (Max 200 words)" required="required">  </textarea>
             </div>
 

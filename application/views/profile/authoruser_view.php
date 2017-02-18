@@ -16,9 +16,10 @@
 
 <body style="background-image: url('<?php echo base_url(); ?>grayscale/img/book2.jpg');">
 
+
     <?php
 
-      $sql = $this->db->select("*")->where("person_id", $this->encrypt->decode($this->session->userdata("id")))->get("author_registration");
+      $sql = $this->db->select("*")->where("person_id", $this->encrypt->decode($this->session->userdata("id")))->get("reader_registration");
 
       $data = $sql->result();
 
@@ -74,6 +75,7 @@
      <?php
       endif;
        ?>
+      <li><a href="<?=site_url('home/show_authors')?>">Show authors</a></li>
   </ul>
   </nav>
   <div class="container">
@@ -93,10 +95,9 @@
           <img src="<?php echo base_url() ?>pdf_images/pdf3.jpg"  style="padding-top:15px">
       </div>
         <div class="col-sm-8">
-          <h2><strong>My Main Excerpt</strong></h2>
-          <p style=" color:grey">By<br>  <?php echo $this->session->userdata("fname")?> </p>
-          
-          <a href = "<?php echo $key->pdf_url; ?>" target = "_blank"> Read </a> 
+          <h2><strong>Suggestions</strong></h2>
+                    
+          <a href = target = "_blank"> Read </a> 
         </div>
     </div>
       <hr>
