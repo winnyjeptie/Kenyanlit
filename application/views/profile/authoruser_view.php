@@ -75,7 +75,7 @@
      <?php
       endif;
        ?>
-      <li><a href="<?=site_url('home/show_authors')?>">Show authors</a></li>
+      <li><a href="<?=site_url('home/show_authors')?>" target = "_blank">Show authors</a></li>
   </ul>
   </nav>
   <div class="container">
@@ -86,6 +86,25 @@
     
 
     <p> <?php echo $key->description ?> </p>
+
+    <h3>Preferred Genres</h3>
+
+    <p> <?php echo $key->drama ?> </p>
+    <p> <?php echo $key->action_adventure ?> </p>
+    <p> <?php echo $key->romance ?> </p>
+    <p> <?php echo $key->mystery ?> </p>
+    <p> <?php echo $key->horror ?> </p>
+    <p> <?php echo $key->selfhelp ?> </p>
+    <p> <?php echo $key->children ?> </p>
+    <p> <?php echo $key->historical ?> </p>
+    <p> <?php echo $key->poetry ?> </p>
+    <p> <?php echo $key->religion ?> </p>
+    <p> <?php echo $key->fables ?> </p>
+    <p> <?php echo $key->autobiographies ?> </p>
+    <p> <?php echo $key->biographies ?> </p>
+    <p> <?php echo $key->shortstory ?> </p>
+    <p> <?php echo $key->othergenres ?> </p>
+    
 
   
     </div>

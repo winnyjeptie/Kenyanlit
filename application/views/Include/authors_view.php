@@ -16,12 +16,12 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach($information as $information){?>
+      <?php foreach($information->result() as $key): ?>
      <tr>
-      <td><?php echo  $information['LName'];?></td>
-     <td><?php echo $information['FName'];?></td>
-     <td><?php echo $information['YOB'];?></td>
-     <td> <img  width=100 src="<?php echo $information['picture_url'];?>"></td>
+      <td><?php echo  $key->lname ;?></td>
+     <td><?php echo $key->fname ;?></td>
+     <td><?php echo $key->yob ;?></td>
+     <td> <img  width=100 src="<?php echo $key->picture_url ;?>"></td>
 
 
      
@@ -29,7 +29,7 @@
      </tr> 
 
        
-     <?php }?>
+     <?php endforeach; ?>
     </tbody>
   </table>
 

@@ -25,6 +25,7 @@
     <body style="background-image: url('<?php echo base_url(); ?>grayscale/img/book2.jpg')"; id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload='document.form1.text1.focus()'>
 
 
+
   <!-- Navigation -->
     <nav>
     <a style="color: white; text-transform: uppercase;  font-weight: 300; font-size: 18px; float: right; font-style: italic; " href="<?php echo base_url(); ?>">KENYANLIT: HOME</a>
@@ -32,12 +33,11 @@
     </nav>
     <br>
  
-  <p> Information saved successfully!!<br> click the link below to proceed to your account!</p>
+  <p> Information saved successfully!!<br> click the link below to log in</p>
 <ul>
-If you are an author, click here to proceed: <br>
- <li><a href="<?=site_url('home/reader_user_view')?>">My author Account</a></li> <br>
- If you are a reader, click here to proceed: <br> 
- <li><a href="<?=site_url('home/author_user_profile')?>">My reader Account</a></li>
+ <li><a href="<?=site_url('/#download')?>">Log In</a></li>  
+
+</ul>
 </ul>
 </body>
 </html>

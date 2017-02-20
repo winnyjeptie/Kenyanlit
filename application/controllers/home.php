@@ -488,18 +488,97 @@ redirect('home/success');
 
 
 		 $this->load->view('home/successful_view');
+		 $userdata = array(
+	           
+	                );
 
-
-
-
+	                $this->session->set_userdata($userdata);
 
 	}
+
 
 	public function logout(){
 
 		session_destroy();
 
 		redirect("/");
+
+	}
+
+    //upload books
+	public function upload_excerpt(){
+
+    
+		// upload item
+      $filename='file_name';
+
+
+           $config = array(
+             'upload_path' => "./pdf/",
+                'allowed_types' => "gif|jpg|png|jpeg|pdf",
+                'overwrite' => TRUE,
+                 'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+                 'max_height' => "3768",
+               'max_width' => "4096"
+                  );
+                 $this->load->library('upload', $config);
+                
+                if($this->upload->do_upload('file_name'))
+                  {
+                 //$file_data = array('upload_data' => $this->upload->data());
+                  $file_data =$this->upload->data();
+    
+                   //echo " We are here"; die();
+                  
+                   $data['pdf']=base_url().'/pdf/'.$file_data['file_name'];
+
+
+				
+
+                 
+		$book_title = $this->input->post("booktitle");
+		$author_name = $this->input->post("author");
+		$genre = $this->input->post("genre");
+        $path=base_url().'pdf/'.$file_data['file_name'];
+                
+
+                  $this->user_model->update_excerpts([
+          'book_title'=>$book_title,
+          'author_name'=>$author_name,
+          'genre'=>$genre,
+          'pdf_url'=>$path  
+
+                    ]);
+
+             
+	                
+
+ redirect('home/success_excerpt');
+
+                  }
+                  else
+                 {
+                  $error = array('error' => $this->upload->display_errors());
+                 $this->load->view('index', $error);
+
+                 // redirect('upload/upload');
+                 } 
+ 
+		//end upload item
+      
+
+	}
+
+	public function success_excerpt(){
+
+
+		 $this->load->view('home/successexcerpt_view');
+		 
+		 $userdata = array(
+	           
+	                );
+
+	                $this->session->set_userdata($userdata);
 
 	}
 

@@ -30,7 +30,7 @@ class user_model extends CI_Model
 
 
     public function show_profile(){
-    	$get_profile ="Select * from author_registration a
+    	/*$get_profile ="Select * from author_registration a
          
          INNER JOIN person p
 
@@ -41,7 +41,14 @@ class user_model extends CI_Model
 
     	";
     	$result=$this->db->query($get_profile);
-    	return $result->result_array();
+    	return $result->result_array();*/
+
+        $query = $this->db->select("person.fname, person.lname, person.yob, author_registration.picture_url")
+                            ->from("person")
+                            ->join("author_registration", "person.person_id = author_registration.person_id")
+                            ->get();
+
+        return $query;
     }
 
      public function show_profiler(){
@@ -65,8 +72,8 @@ $this->db->where( 'person_id',$id);
 $this->db->update('author_registration',$data); 
     }
 
-     public function update_excerpts(){
-     $this->db->insert('books');     
+     public function update_excerpts($data){
+     $this->db->insert('books',$data);     
 
     }
 

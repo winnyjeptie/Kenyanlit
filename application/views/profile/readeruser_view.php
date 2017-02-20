@@ -70,7 +70,7 @@
     <?php
     if($userkey->Type == 1):
      ?>
-      <li><a href="<?=site_url('home/excerpt')?>">Upload Excerpts</a></li>
+      <li><a href="<?=site_url('home/excerpt')?>" target = "_blank">Upload Excerpts</a></li>
      <?php
       endif;
        ?>
@@ -85,8 +85,26 @@
 
     <p> <?php echo $key->description ?> </p>
 
-  
+    <h3>Preferred Genres</h3>
+
+    <p> <?php echo $key->drama ?> </p>
+    <p> <?php echo $key->action ?> </p>
+    <p> <?php echo $key->romance ?> </p>
+    <p> <?php echo $key->mystery ?> </p>
+    <p> <?php echo $key->horror ?> </p>
+    <p> <?php echo $key->selfhelp ?> </p>
+    <p> <?php echo $key->children ?> </p>
+    <p> <?php echo $key->historical ?> </p>
+    <p> <?php echo $key->poetry ?> </p>
+    <p> <?php echo $key->religion ?> </p>
+    <p> <?php echo $key->fables ?> </p>
+    <p> <?php echo $key->autobiographies ?> </p>
+    <p> <?php echo $key->biographies ?> </p>
+    <p> <?php echo $key->shortstory ?> </p>
+    <p> <?php echo $key->othergenres ?> </p>
+    
     </div>
+
     <div class="col-md-7 col-sm-7 col-xs-7 reading-list">
       <div class="row">
         <div class="col-sm-4">
